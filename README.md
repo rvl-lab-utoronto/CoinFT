@@ -36,7 +36,7 @@ We have a PSoC board and a Teensy 4.0 board in the lab, so you don't need to ord
 5. The original silicone rubber layer was made using two types of materials: TAP Silicone RTV Mold-Making System and Smooth-On Mold Max 40. However, we were unable to find TAP Silicone, so we only have Mold Max 40. This is fine, the instructions said that either material can be used.
 6. The following picture shows some more components that we'll need, which we already have in the lab:
  <img width="1159" height="657" alt="Screenshot 2026-08-27 at 10 46 31 AM" src="https://github.com/user-attachments/assets/0a19fd94-e526-4e32-bc47-3606e4bf1483" />
-7. We are replacing the acrylic parts with 3D printed parts including the holder for the PCBs, the guide rings for the weights and the calibration base. The CAD files can be found in the folder (TODO)
+7. We are replacing the acrylic parts with 3D printed parts including the holder for the PCBs, the guide rings for the weights and the calibration base. The CAD files can be found in the `CAD` folder.
    
 
 ## Equipment
@@ -53,7 +53,7 @@ The [official hardware instructions](https://docs.google.com/presentation/d/1NiO
 - Bottom:
    1. Sand and clean the PCBs
    2. Bring the cured top PCB and the sanded bottom PCB to CRAFT.
-   3. Mix and degas the chemical mixtures, then spin coat the bottom PCB at 4000 RPM for 1 minute (you will have to experiment with the exact time)
+   3. Mix and degas the chemical mixtures (1400 RPM for 2 minutes), then spin coat the bottom PCB at 3100 RPM for 1 minute and 20 seconds (you will have to experiment with the exact time)
    4. Place the top PCB on top of the bottom PCB and leave it to cure for 24 hours (or longer)
       
 <i>Do not sand too much!</i> 
@@ -68,3 +68,5 @@ When collecting data to train the model, start with slower presses to get a sens
 
 For reference, ~15 training sets (30s each) of stationary objects + slow presses should give you results like this, with mean-squared error per axis (Newtons): Fx: 0.000512, Fy: 0.000391, and Fz: 0.053102
 <img width="1000" height="1000" alt="CFT24_MLP_test_force_results" src="https://github.com/user-attachments/assets/09d0462e-7b05-477c-87a9-ca7d1947b70b" />
+
+The PSoC board (the red one) should be used to flash and calibrate the CoinFT sensor. Once the board has been calibrated, remove all the soldered wires from the sensor and reconnect the signal connections to the Teensy board. 
