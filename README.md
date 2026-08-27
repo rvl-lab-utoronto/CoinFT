@@ -13,8 +13,6 @@ Please refer to their [official website](https://coin-ft.github.io) for the comp
 - [Equipment](#equipment)
 - [Fabrication](#fabrication)
 - [Calibration](#calibration)
-- [Files](#files)
-
 
 
 ## Facility
@@ -70,7 +68,3 @@ When collecting data to train the model, start with slower presses to get a sens
 
 For reference, ~15 training sets (30s each) of stationary objects + slow presses should give you results like this, with mean-squared error per axis (Newtons): Fx: 0.000512, Fy: 0.000391, and Fz: 0.053102
 <img width="1000" height="1000" alt="CFT24_MLP_test_force_results" src="https://github.com/user-attachments/assets/09d0462e-7b05-477c-87a9-ca7d1947b70b" />
-
-
-
-## Files
