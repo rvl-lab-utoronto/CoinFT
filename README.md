@@ -48,15 +48,21 @@ We have a PSoC board and a Teensy 4.0 board in the lab, so you don't need to ord
 The [official hardware instructions](https://docs.google.com/presentation/d/1NiOAXyq2A7fU8aHAD35k3iYaZIU_IhwRRHh8g923IFc/edit?slide=id.g348a17224d2_0_90#slide=id.g348a17224d2_0_90) 
 - Top:
    1. Sand and clean the PCBs (with IPA 99%) at Myhal
-   2. Carry the PCBs in a Petri dish to CRAFT (at Bahen). Mix and degas the chemical mixtures, then apply the mold.
+   2. Carry the PCBs in a Petri dish to CRAFT (at Bahen). Mix and degas the chemical mixtures (Mold Max 40 part A & B), then apply the mold.
    3. Leave the PCBs to cure at Myhal for 24 hours
 - Bottom:
    1. Sand and clean the PCBs
    2. Bring the cured top PCB and the sanded bottom PCB to CRAFT.
    3. Mix and degas the chemical mixtures (1400 RPM for 2 minutes), then spin coat the bottom PCB at 3100 RPM for 1 minute and 20 seconds (you will have to experiment with the exact time)
    4. Place the top PCB on top of the bottom PCB and leave it to cure for 24 hours (or longer)
-      
-<i>Do not sand too much!</i> 
+- Soldering:
+  1. Solder the yellow shielding to GND (G) not SHD, do not follow their tutorial.
+- Sanding: 
+  <i>Do not sand too much!</i> 
+The following picture shows the amount of sanding you should aim for. You can sand a little more, but try to get a more even exposure.
+
+<img width="553" height="393" alt="IMG_2676" src="https://github.com/user-attachments/assets/a89fc3f7-6272-44ba-a69e-d36b84b660ac" />
+
 
 
 ## Calibration
