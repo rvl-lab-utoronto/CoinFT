@@ -10,7 +10,7 @@ Please refer to their [official website](https://coin-ft.github.io) for the comp
 ## Catalog
 - [Facility](#facility)
 - [Components](#components)
-- [Equipments](#equipments)
+- [Equipment](#equipment)
 - [Fabrication](#fabrication)
 - [Calibration](#calibration)
 - [Files](#files)
@@ -41,7 +41,7 @@ We have a PSoC board and a Teensy 4.0 board in the lab, so you don't need to ord
 7. We are replacing the acrylic parts with 3D printed parts including the holder for the PCBs, the guide rings for the weights and the calibration base. The CAD files can be found in the folder (TODO)
    
 
-## Equipments
+## Equipment
 1. A soldering iron
 2. A 3D printer
 
