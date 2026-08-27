@@ -47,8 +47,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-#     python3 -m venv ~/bota_venv
-# source ~/bota_venv/bin/activate
-# pip install bota-driver
