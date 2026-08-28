@@ -12,13 +12,13 @@
 - bota_rate: default 400Hz
 - trim_duration: length of each episode, default 30s
 
-Formats the collected data. Run this after all data has been collected:
+Run this after all data has been collected:
 `sudo python3 data_processor.py`
 
 Train the model:
 `sudo python3 coinft_MLP_train.py`
 
-To run CoinFT live:
+Run CoinFT live:
 `sudo python3 live_eval.py --model_dir sensor_A --recording_time 30`
 for models located in the `/trained_model/sensor_A` folder
 
