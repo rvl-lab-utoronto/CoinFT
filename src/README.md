@@ -1,6 +1,15 @@
+## Setup
+Ensure the correct orientation
+<img width="3814" height="2860" alt="IMG_2681-2" src="https://github.com/user-attachments/assets/2477d745-cf4f-42cd-83cf-a467b2051a45" />
+
+
+
+
+
 ## Notes
 1. Run sudo for every file
 2. The Bota sensor is collecting data at 400Hz.
+
 3. Both sensors stop collecting at the same time, the collected dataset is then trimmed by `trim_duration` from the end of the episode, ensuring that the timestamps are synced. <i>The sensors are NOT hardware synced</i>. 
 4. The total collection time is `trim_duration` + 5s
 5. You will need to intentionally twist the top PCB around the Z-axis to collect sufficient data for training the Z-axis torque (ie Mz), otherwise the trained model may not be accurate. 
