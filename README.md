@@ -13,6 +13,7 @@ Please refer to their [official website](https://coin-ft.github.io) for the comp
 - [Equipment](#equipment)
 - [Fabrication](#fabrication)
 - [Calibration](#calibration)
+- [Files](#files)
 
 
 ## Facility
@@ -76,3 +77,7 @@ For reference, ~15 training sets (30s each) of stationary objects + slow presses
 <img width="1000" height="1000" alt="CFT24_MLP_test_force_results" src="https://github.com/user-attachments/assets/09d0462e-7b05-477c-87a9-ca7d1947b70b" />
 
 The PSoC board (the red one) should be used to flash and calibrate the CoinFT sensor. Once the board has been calibrated, remove all the soldered wires from the sensor and reconnect the signal connections to the Teensy board. [Link to the Teensy code](https://github.com/coin-ft/coin-ft/tree/main/hardware_files/Teensy)
+
+
+## Files
+You can find the trained models for the two available CoinFTs in the lab (labeled A and B) in the `trained_model` folder.
