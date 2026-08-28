@@ -1,3 +1,8 @@
+## Setup
+Ensure the correct orientation
+<img width="3814" height="2860" alt="IMG_2681-2" src="https://github.com/user-attachments/assets/e0e4f6ba-47cd-4e7d-aaa9-d895fd49a34a" />
+
+
 ## Notes
 1. Run sudo for every file
 2. The Bota sensor is collecting data at 400Hz.
