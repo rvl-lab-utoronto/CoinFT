@@ -11,7 +11,7 @@ import os
 # --- CONFIGURATION ---
 BATCH_SIZE = 32
 LEARNING_RATE = 1e-3
-EPOCHS = 100
+EPOCHS = 30
 L2_REG = 1e-4  # L2 Regularization
 SEED = 42
 SENSOR_NAME = "CFT24"

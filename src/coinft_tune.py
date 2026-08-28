@@ -1,6 +1,7 @@
 import os
 import sys
 import time
+import argparse
 import threading
 from datetime import datetime
 
@@ -12,15 +13,43 @@ import serial.tools.list_ports
 import bota_driver
 
 #########################
-# 1. CONTROL PANEL      #
+# 1. ARGUMENT PARSING   #
 #########################
-COM_NAME = '/dev/cu.usbmodem11203'                 # Serial port for CoinFT
+DURATION_BUFFER = 5  # extra seconds recorded on top of trim_duration, as startup buffer
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="CoinFT <-> Bota reference sensor calibration/data collection."
+    )
+    parser.add_argument(
+        '--data_type', type=str, required=True, choices=['train', 'val', 'test'],
+        help="Which split this recording session is for (train/val/test). "
+             "Used as the file ID (previously `ID`)."
+    )
+    parser.add_argument(
+        '--bota_rate', type=int, default=250,
+        help="Rate-limit Bota polling to this many Hz (previously `BOTA_POLL_RATE`)."
+    )
+    parser.add_argument(
+        '--trim_duration', type=float, default=30,
+        help="How much of the recording to keep/use for calibration, in seconds "
+             "(previously `TRIM_DURATION`). Actual record duration is "
+             f"trim_duration + {DURATION_BUFFER}s (previously `RECORD_DURATION`)."
+    )
+    return parser.parse_args()
+
+
+ARGS = parse_args()
+
+# Hardware config
+COM_NAME = '/dev/cu.usbmodem1203'                 # Serial port for CoinFT
 BAUD_RATE = 1000000
-RECORD_DURATION = 35              # How long to actually record both sensors, in [s]
-TRIM_DURATION = 30                # How much of that recording to keep/use for calibration, in [s]
-BOTA_POLL_RATE = 500               # Rate-limit Bota polling to this many Hz
 SENSOR_NAME = 'CFT24'
-ID = 'train'                       # Unique identifier for the calibration session
+
+BOTA_POLL_RATE = ARGS.bota_rate
+TRIM_DURATION = ARGS.trim_duration
+RECORD_DURATION = TRIM_DURATION + DURATION_BUFFER
+ID = ARGS.data_type
 
 BOTA_CONFIG_PATH = os.path.join(
     os.path.dirname(os.path.abspath(__file__)), "ethercat_gen0.json"
@@ -92,7 +121,7 @@ except Exception as e:
 def read_bota():
     """
     Software-polled acquisition of the Bota sensor, rate-limited to
-    BOTA_POLL_RATE (default 500 Hz) instead of polling as fast as possible.
+    BOTA_POLL_RATE (default 250 Hz) instead of polling as fast as possible.
     Timestamps each sample with time.perf_counter() for later alignment
     against the CoinFT stream.
     """
@@ -135,7 +164,9 @@ def read_coinft():
 #########################
 # 4. RUN DATA COLLECTION#
 #########################
-print("BEGIN DATA COLLECTION...")
+print(f"BEGIN DATA COLLECTION [data_type={ID}, trim={TRIM_DURATION}s "
+      f"(+{DURATION_BUFFER}s buffer = {RECORD_DURATION}s recorded), "
+      f"bota_rate={BOTA_POLL_RATE}Hz]...")
 t_daq = threading.Thread(target=read_bota)
 t_cft = threading.Thread(target=read_coinft)
 
@@ -261,5 +292,9 @@ with h5py.File(full_path, 'w') as f:
     f.attrs['sensor_name'] = SENSOR_NAME
     f.attrs['timestamp'] = ts
     f.attrs['reference_sensor'] = 'Bota'
+    f.attrs['data_type'] = ID
+    f.attrs['record_duration'] = RECORD_DURATION
+    f.attrs['trim_duration'] = TRIM_DURATION
+    f.attrs['bota_rate'] = BOTA_POLL_RATE
 
 print(f"Saved: {h5_filename}")
