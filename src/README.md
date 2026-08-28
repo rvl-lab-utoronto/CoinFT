@@ -25,12 +25,3 @@ for models located in the `/trained_model/sensor_A` folder
 
 ## Models
 1. `/trained_model/sensor_A` is trained on 18 datasets, 22 steps each, 30s per episode, with Bota's frequency set to 400 Hz.
-
-
-## Files
-1. bota_sensor.py: verify hardware connection with the Bota sensor
-2. coinft_MLP_train.py: train the model on the collected dataset
-3. coinft_tune.py: data collection
-4. CoinFT_V2_firmware.hex
-5. data_processor.py: formats raw collected sensor data for training
-6. ethercat_gen0.json: Bota sensor config
