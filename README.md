@@ -13,6 +13,7 @@ Please refer to their [official website](https://coin-ft.github.io) for the comp
 - [Equipment](#equipment)
 - [Fabrication](#fabrication)
 - [Calibration](#calibration)
+- [Sensors](#sensors)
 - [Files](#files)
 
 
@@ -79,5 +80,7 @@ For reference, ~15 training sets (30s each) of stationary objects + slow presses
 The PSoC board (the red one) should be used to flash and calibrate the CoinFT sensor. Once the board has been calibrated, remove all the soldered wires from the sensor and reconnect the signal connections to the Teensy board. [Link to the Teensy code](https://github.com/coin-ft/coin-ft/tree/main/hardware_files/Teensy)
 
 
-## Files
-You can find the trained models for the two available CoinFTs in the lab (labeled A and B) in the `trained_model` folder.
+## Sensors
+I have uploaded the firmware for sensor A, B and C and trained individual models for sensors A and B, located in the `trained_model` folder.
+
+The sensors may need to be recalibrated given that the rubber ages and becomes less elastic. If recalibration is needed, follow the instructions in README.md inside the `src` folder to collect and re-train the models.

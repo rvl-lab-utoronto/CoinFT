@@ -44,7 +44,7 @@ def parse_args():
 ARGS = parse_args()
 
 # Hardware config (matches coinft_tune.py)
-COM_NAME = '/dev/cu.usbmodem1203'
+COM_NAME = '/dev/cu.usbmodem11203'
 BAUD_RATE = 1000000
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
