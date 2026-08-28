@@ -14,7 +14,6 @@ Please refer to their [official website](https://coin-ft.github.io) for the comp
 - [Fabrication](#fabrication)
 - [Calibration](#calibration)
 - [Sensors](#sensors)
-- [Files](#files)
 
 
 ## Facility
@@ -81,6 +80,8 @@ The PSoC board (the red one) should be used to flash and calibrate the CoinFT se
 
 
 ## Sensors
-I have uploaded the firmware for sensor A, B and C and trained individual models for sensors A and B, located in the `trained_model` folder.
+As of September 2026, there are three fabricated CoinFT sensors in the lab labeled A, B and C.
+
+I have uploaded the firmware for sensor A, B and C (they are ready to use) and trained individual models for sensors A and B, located in the `trained_model` folder.
 
 The sensors may need to be recalibrated given that the rubber ages and becomes less elastic. If recalibration is needed, follow the instructions in README.md inside the `src` folder to collect and re-train the models.
