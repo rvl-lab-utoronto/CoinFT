@@ -29,4 +29,4 @@ for models located in the `/trained_model/sensor_A` folder
 
 
 ## Models
-1. `/trained_model/sensor_A` is trained on 18 datasets, 22 steps each, 30s per episode, with Bota's frequency set to 400 Hz.
+1. `/trained_model/sensor_A` is trained on 18 episodes, 30s per episode, with Bota's frequency set to 400Hz.
